@@ -1,25 +1,25 @@
 #!name=fmz200定时任务合集
 #!desc=整合大部分定时任务Loon版
 #!author=fmz200
-#!homepage=https://github.com/fmz200/wool_scripts
-#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/NaiSi_01.png
-#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/scripts/loon.task.scripts
+#!homepage=https://github.com/ipy/wool_scripts
+#!icon=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/author/NaiSi_01.png
+#!raw-url=https://github.com/ipy/wool_scripts/raw/main/Loon/scripts/loon.task.scripts
 #!tg-group=https://t.me/lanjieguanggao
 #!date=2023-12-02 19:35:00
 #############################################
 
 # fmz200
-cron "0 1 0 * * ?" script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, timeout=300, tag=阿里云盘签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AliYunDrive.png, enabled=false
+cron "0 1 0 * * ?" script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, timeout=300, tag=阿里云盘签到, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/apps/AliYunDrive.png, enabled=false
 cron "10 0,8,12,18 * * *" script-path=https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js, timeout=300, tag=滴滴橙心果园, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/didi.png, enabled=false
-cron "30 1,8,12,17 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuaishou/ks_fruit.js, timeout=300, tag=快手果园, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/kuaishou.png, enabled=false
-cron "30 1,7,12,18,22 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/pinduoduo/pdd_guoyuan.js, timeout=300, tag=拼多多果园, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/pinduoduo.png, enabled=false
+cron "30 1,8,12,17 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/kuaishou/ks_fruit.js, timeout=300, tag=快手果园, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/task/kuaishou.png, enabled=false
+cron "30 1,7,12,18,22 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/pinduoduo/pdd_guoyuan.js, timeout=300, tag=拼多多果园, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/apps/pinduoduo.png, enabled=false
 cron "15 8,10,12,18,20 * * *" script-path=https://raw.githubusercontent.com/LinYuanovo/scripts/main/dygy.js, timeout=300, tag=抖音果园, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png, enabled=false
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jddj_fruit.js, timeout=300, tag=京东到家果园任务, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
-cron "0 */1 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jddj_fruit_collectWater.js, timeout=300, tag=京东到家果园水车自动收水滴, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jddj_bean.js, timeout=300, tag=京东到家鲜豆任务, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jddj_plantBeans.js, timeout=300, tag=京东到家鲜豆庄园, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
-cron "0 * */1 * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jddj_getPoints.js, timeout=300, tag=京东到家鲜豆庄园收水滴, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
-cron "22 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/airport_fetch_notice.js, timeout=300, tag=获取机场公告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/airport/airport.png, enabled=false
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jddj_fruit.js, timeout=300, tag=京东到家果园任务, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
+cron "0 */1 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jddj_fruit_collectWater.js, timeout=300, tag=京东到家果园水车自动收水滴, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jddj_bean.js, timeout=300, tag=京东到家鲜豆任务, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jddj_plantBeans.js, timeout=300, tag=京东到家鲜豆庄园, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
+cron "0 * */1 * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jddj_getPoints.js, timeout=300, tag=京东到家鲜豆庄园收水滴, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jddj.png, enabled=false
+cron "22 10 * * *" script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/QuantumultX/scripts/airport_fetch_notice.js, timeout=300, tag=获取机场公告, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/airport/airport.png, enabled=false
 
 
 # By Evilbutcher GitHub：https://github.com/evilbutcher/Quantumult_X/tree/master
@@ -27,7 +27,7 @@ cron "5 6 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quant
 cron "5 6 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js, enable=false, tag=iDaily每日环球视野
 cron "30 7-22 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/appstore/AppMonitor.js, enable=false, tag=App价格监控
 cron "30 0 8-22/2 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/hotsearch/hot.js, enable=false, tag=热门监控
-cron "45 3 8 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/weibo/weibotalk.js, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/WeiboTalk.png, enable=false, tag=微博超话
+cron "45 3 8 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/weibo/weibotalk.js, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/apps/WeiboTalk.png, enable=false, tag=微博超话
 cron "25 4 8 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js, enable=false, tag=GLaDOS签到
 cron "45 4 8 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js, enable=false, tag=机场签到
 cron "0 5 8 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkincookie_env.js, enable=false, tag=机场签到Cookie版
@@ -416,5 +416,5 @@ cron "15 17 * * *" script-path=https://raw.githubusercontent.com/ChuheGit/1/main
 
 
 # BoxJS
-cron "0 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_All.js, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BoxJS.png, enable=false, tag=抹掉BoxJS全局备份
-cron "0 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_Cache.js, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BoxJS.png, enable=false, tag=抹掉BoxJS订阅缓存
+cron "0 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_All.js, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/apps/BoxJS.png, enable=false, tag=抹掉BoxJS全局备份
+cron "0 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_Cache.js, img-url=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/apps/BoxJS.png, enable=false, tag=抹掉BoxJS订阅缓存

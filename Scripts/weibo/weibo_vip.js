@@ -3,7 +3,7 @@
  *
  * hostname=new.vip.weibo.cn
  * [rewrite_local]
- * ^https?://new\.vip\.weibo\.cn/aj/appicon/list url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js
+ * ^https?://new\.vip\.weibo\.cn/aj/appicon/list url script-response-body https://github.com/ipy/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js
  *
  */
 
@@ -17,4 +17,4 @@ if (obj.data && obj.data.list) {
   });
 }
 
-$done({body: JSON.stringify(obj)});
+$done({ body: JSON.stringify(obj) });

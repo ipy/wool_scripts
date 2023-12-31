@@ -1,9 +1,9 @@
 #!name=微博去广告
 #!desc=整合了@zmqcherish的去广告配置，只去广告不做净化
 #!author=fmz200
-#!homepage=https://github.com/fmz200/wool_scripts
-#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
-#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/weibo.snippet
+#!homepage=https://github.com/ipy/wool_scripts
+#!icon=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/gif/naisi-01.gif
+#!raw-url=https://github.com/ipy/wool_scripts/raw/main/QuantumultX/rewrite/weibo.snippet
 #!tg-group=https://t.me/lanjieguanggao
 #!date=2023-11-27 12:36:00
 #############################################
@@ -17,7 +17,7 @@
 hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, new.vip.weibo.cn
 
 # 似乎没用的请求
-https://api\.weibo\.cn/2/(push/active|client/addlog_batch|ad/preload) url script-request-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/privacy_protection.js
+https://api\.weibo\.cn/2/(push/active|client/addlog_batch|ad/preload) url script-request-body https://raw.githubusercontent.com/ipy/wool_scripts/main/QuantumultX/scripts/privacy_protection.js
 
 # 屏蔽首页左上角每日的弹窗tips
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily url reject-dict
@@ -26,25 +26,25 @@ https://api\.weibo\.cn/2/(push/active|client/addlog_batch|ad/preload) url script
 https://api.weibo.cn/2/!/huati/discovery_home_bottom_getdotinfo url reject
 
 # 微博移除发现页广告
-^https?://api.weibo.cn/2/search/(finder|container_timeline|container_discover) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+^https?://api.weibo.cn/2/search/(finder|container_timeline|container_discover) url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博热搜页面广告
-^https?://api.weibo.cn/2/page url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+^https?://api.weibo.cn/2/page url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博话题页面广告
-https://api.weibo.cn/2/searchall url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+https://api.weibo.cn/2/searchall url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博超话页面广告
-^https?://api.weibo.cn/2/statuses/container_timeline_topicpage url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+^https?://api.weibo.cn/2/statuses/container_timeline_topicpage url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博详情页面广告
-^https?://api.weibo.cn/2/statuses/extend url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+^https?://api.weibo.cn/2/statuses/extend url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博最顶部的tab页分组
-^https?://api.weibo.cn/2/groups/allgroups/v2 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+^https?://api.weibo.cn/2/groups/allgroups/v2 url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
 # 微博去广告以及去除各部分推广模块 - cherish
-^https?://m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item|search/(finder|container_timeline|container_discover)) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js
+^https?://m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item|search/(finder|container_timeline|container_discover)) url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/weibo/weibo_main.js
 
 # 删除微博开屏广告 - cherish
 ^https:\/\/bootrealtime\.uve\.weibo\.com\/v3\/ad\/realtime url reject-dict
@@ -57,4 +57,4 @@ https://api.weibo.cn/2/searchall url script-response-body https://raw.githubuser
 ^https://new.vip.weibo.cn/littleskin/preview url script-response-body https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js
 
 # 解锁微博会员APP图标
-^https?://new\.vip\.weibo\.cn/aj/appicon/list url script-response-body https://github.com/fmz200/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js
+^https?://new\.vip\.weibo\.cn/aj/appicon/list url script-response-body https://github.com/ipy/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js

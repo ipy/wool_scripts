@@ -1,9 +1,9 @@
 #!name=fmz200获取cookie合集
 #!desc=整合大部分获取cookie的配置Loon版，获取cookie后禁用该配置
 #!author=fmz200
-#!homepage=https://github.com/fmz200/wool_scripts
-#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/NaiSi_01.png
-#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/scripts/get_cookie.scripts
+#!homepage=https://github.com/ipy/wool_scripts
+#!icon=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/author/NaiSi_01.png
+#!raw-url=https://github.com/ipy/wool_scripts/raw/main/Loon/scripts/get_cookie.scripts
 #!tg-group=https://t.me/lanjieguanggao
 #!date=2023-12-02 19:35:00
 #############################################

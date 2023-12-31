@@ -20,15 +20,15 @@ hostname = home.m.jd.com
 ===================Quantumult X=====================
 [rewrite_local]
 # 获取多账号京东Cookie
-^https:\/\/home\.m\.jd\.com\/myJd\/home\.action url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jd_cookie.js
+^https:\/\/home\.m\.jd\.com\/myJd\/home\.action url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jd_cookie.js
 
 ===================Loon===================
 [Script]
-http-request ^https:\/\/home\.m\.jd\.com\/myJd\/home\.action script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jd_cookie.js, tag=获取多账号京东Cookie
+http-request ^https:\/\/home\.m\.jd\.com\/myJd\/home\.action script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jd_cookie.js, tag=获取多账号京东Cookie
 
 ===================Surge===================
 [Script]
-获取多账号京东Cookie = type=http-request,pattern=^https:\/\/home\.m\.jd\.com\/myJd\/home\.action,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jd_cookie.js,script-update-interval=0
+获取多账号京东Cookie = type=http-request,pattern=^https:\/\/home\.m\.jd\.com\/myJd\/home\.action,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jd_cookie.js,script-update-interval=0
  */
 
 const APIKey = "CookiesJD";
@@ -56,7 +56,11 @@ function GetCookie() {
         var CookieName;
         var updateCodkie = CookiesData.find((item, index) => {
           var ck = item.cookie;
-          var Account = ck ? ck.match(/pt_pin=.+?;/) ? ck.match(/pt_pin=([^; ]+)(?=;?)/)[1] : null : null;
+          var Account = ck
+            ? ck.match(/pt_pin=.+?;/)
+              ? ck.match(/pt_pin=([^; ]+)(?=;?)/)[1]
+              : null
+            : null;
           const verify = UserName === Account;
           if (verify) {
             updateIndex = index;
@@ -79,9 +83,17 @@ function GetCookie() {
         const cacheValue = JSON.stringify(updateCookiesData, null, "\t");
         $.write(cacheValue, CacheKey);
         console.log(`获取到${DecodeName}的cookie：${CookieValue}`);
-        $.notify("用户名: " + DecodeName, "", tipPrefix + CookieName + "Cookie成功✔✔\n" + CookieValue);
+        $.notify(
+          "用户名: " + DecodeName,
+          "",
+          tipPrefix + CookieName + "Cookie成功✔✔\n" + CookieValue
+        );
       } else {
-        $.notify("♥♥写入京东Cookie失败", "", "请查看脚本内说明, 登录网页获取 ‼️");
+        $.notify(
+          "♥♥写入京东Cookie失败",
+          "",
+          "请查看脚本内说明, 登录网页获取 ‼️"
+        );
       }
       $.done();
       return;
@@ -94,8 +106,7 @@ function GetCookie() {
     console.log(`\n写入京东Cookie出现错误 ‼️\n
       ${JSON.stringify(eor)}\n\n
       ${eor}\n\n
-      ${JSON.stringify($request.headers)}\n`
-    );
+      ${JSON.stringify($request.headers)}\n`);
   }
   $.done();
 }

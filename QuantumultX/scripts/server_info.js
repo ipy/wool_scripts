@@ -4,7 +4,7 @@
  *
  *  配置：
  *  [task_local]
- *  event-interaction https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/server_info.js, tag=节点详情查询, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Back.png, enabled=true
+ *  event-interaction https://raw.githubusercontent.com/ipy/wool_scripts/main/QuantumultX/scripts/server_info.js, tag=节点详情查询, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Back.png, enabled=true
  *  使用：配置好以后长按节点执行脚本，如果节点类型的ISP进行大致的判断
  *  因为显示详细ISP的网站需要付费（ipinfo.io），所以只能找个替代的网站（www.cz88.net)
  *
@@ -34,41 +34,52 @@ get_ip_api();
 function get_ip_api() {
   const url = `http://ip-api.com/json?lang=zh-CN`;
   const opts = {
-    policy: $environment.params
+    policy: $environment.params,
   };
   const myRequest = {
     url: url,
     opts: opts,
-    timeout: 8000
+    timeout: 8000,
   };
 
-  $task.fetch(myRequest).then(response => {
-    console.log(response.statusCode + "--ip-api--\n" + response.body);
-    if (response.body) fetchIPInfo(response.body);
-  }, () => {
-    message = "</br></br>🛑 查询超时";
-    message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: bold;">` + message + `</p>`;
-    $done({"title": "    📍 节点详情查询", "htmlMessage": message});
-  })
+  $task.fetch(myRequest).then(
+    (response) => {
+      console.log(response.statusCode + "--ip-api--\n" + response.body);
+      if (response.body) fetchIPInfo(response.body);
+    },
+    () => {
+      message = "</br></br>🛑 查询超时";
+      message =
+        `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: bold;">` +
+        message +
+        `</p>`;
+      $done({ title: "    📍 节点详情查询", htmlMessage: message });
+    }
+  );
 }
 
 // 2、获取到IP后再去查询IP的详细信息
 function fetchIPInfo(data) {
-  const url = `https://www.cz88.net/api/cz88/ip/base?ip=${JSON.parse(data).query}`;
+  const url = `https://www.cz88.net/api/cz88/ip/base?ip=${
+    JSON.parse(data).query
+  }`;
   console.log("url=" + url);
   const myRequest = {
     url: url,
-    timeout: 8000
+    timeout: 8000,
   };
 
-  $task.fetch(myRequest).then(response => {
-    console.log(response.statusCode + "--cz88--\n" + response.body);
-    if (response.body) json2info(response.body, data);
-    $done({"title": "    📍 节点详情查询", "htmlMessage": message});
-  }, reason => {
-    console.log(reason.error);
-    $done();
-  });
+  $task.fetch(myRequest).then(
+    (response) => {
+      console.log(response.statusCode + "--cz88--\n" + response.body);
+      if (response.body) json2info(response.body, data);
+      $done({ title: "    📍 节点详情查询", htmlMessage: message });
+    },
+    (reason) => {
+      console.log(reason.error);
+      $done();
+    }
+  );
 }
 
 // 3、解析数据
@@ -84,13 +95,27 @@ function json2info(data1, data) {
   message += "</br><b>运营商(isp)：</b>" + data1.isp + "</br>";
   message += "</br><b>网络类型：</b>" + data1.netWorkType + "</br>";
   message += "</br><b>真人概率：</b>" + data1.score + "</br>";
-  message += "</br><b>位置 : </b>" + data1.countryCode + "-" + data1.country + "-" + data1.province + "-" + data1.city + "-" + data1.districts + "</br>";
+  message +=
+    "</br><b>位置 : </b>" +
+    data1.countryCode +
+    "-" +
+    data1.country +
+    "-" +
+    data1.province +
+    "-" +
+    data1.city +
+    "-" +
+    data1.districts +
+    "</br>";
   message += "</br><b>ZIP：</b>" + data.zip + "</br>";
   message += "</br><b>经纬度 : </b>" + data.lon + " / " + data.lat + "</br>";
   message += "</br><b>时区 : </b>" + data.timezone + "</br>";
-  message += "------------------------------" + "</br>"
-  message += "<font color=#6959CD><b>节点</b> ➟ " + $environment.params + "</font>";
-  message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: lighter">` + message + `</p>`;
+  message += "------------------------------" + "</br>";
+  message +=
+    "<font color=#6959CD><b>节点</b> ➟ " + $environment.params + "</font>";
+  message =
+    `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: lighter">` +
+    message +
+    `</p>`;
   console.log("\n" + message);
 }
-

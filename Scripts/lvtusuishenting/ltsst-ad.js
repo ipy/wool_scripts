@@ -6,7 +6,7 @@
  **************************************
 
  [rewrite_local]
- ^https:\/\/www\.1314zhilv\.com\/ltsstnew\/(common\/getJGQIconNew|city\/getAllBannelByCity) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js
+ ^https:\/\/www\.1314zhilv\.com\/ltsstnew\/(common\/getJGQIconNew|city\/getAllBannelByCity) url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js
 
  [mitm]
  hostname = www.1314zhilv.com
@@ -16,10 +16,10 @@
 var body = JSON.parse($response.body);
 const url = $request.url;
 
-if (url.includes('/ltsstnew/common/getJGQIconNew')) {
+if (url.includes("/ltsstnew/common/getJGQIconNew")) {
   delete body.content.specialBanner;
-} else if (url.includes('/ltsstnew/city/getAllBannelByCity')) {
-  body.content = body.content.filter(i => i.bannerType === 1);
+} else if (url.includes("/ltsstnew/city/getAllBannelByCity")) {
+  body.content = body.content.filter((i) => i.bannerType === 1);
 }
 
-$done({body: JSON.stringify(body)});
+$done({ body: JSON.stringify(body) });

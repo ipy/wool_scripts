@@ -6,7 +6,7 @@
  **************************************
 
  [rewrite_local]
-^https:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js
+^https:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile) url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js
 
  [mitm]
  hostname = dict.youdao.com
@@ -15,14 +15,20 @@
 let obj = JSON.parse($response.body);
 const url = $request.url;
 
-if (url.includes('/homepage/promotion')) {
-  obj.data.dataList = obj.data.dataList.filter(i => i.type === 'WOW');
-} else if (url.includes('/course/tab/home')) {
-  obj.data.tab.tabList = obj.data.tab.tabList.filter(i => i.title === '学库' || i.title === '四六级');
-  obj.data.icon.iconList = obj.data.icon.iconList.filter(i => i.title === '实用英语');
-  obj.data.fragmentList = obj.data.fragmentList.filter(i => i.type === 'GREAT_COURSE');
-} else if (url.includes('/homepage/tile')) {
-  obj.data.children = obj.data.children.filter(i => i.type === '');
+if (url.includes("/homepage/promotion")) {
+  obj.data.dataList = obj.data.dataList.filter((i) => i.type === "WOW");
+} else if (url.includes("/course/tab/home")) {
+  obj.data.tab.tabList = obj.data.tab.tabList.filter(
+    (i) => i.title === "学库" || i.title === "四六级"
+  );
+  obj.data.icon.iconList = obj.data.icon.iconList.filter(
+    (i) => i.title === "实用英语"
+  );
+  obj.data.fragmentList = obj.data.fragmentList.filter(
+    (i) => i.type === "GREAT_COURSE"
+  );
+} else if (url.includes("/homepage/tile")) {
+  obj.data.children = obj.data.children.filter((i) => i.type === "");
 }
 
-$done({body: JSON.stringify(obj)});
+$done({ body: JSON.stringify(obj) });

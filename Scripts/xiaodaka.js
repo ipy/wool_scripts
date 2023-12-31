@@ -8,7 +8,7 @@
  
 [rewrite_local]
 # ～ 小打卡(微信小程序)解鎖會員權限（2022-03-12）
-^https?:\/\/uranus\.sharedaka\.com\/api\/v3\/user\/info\/get url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaodaka.js
+^https?:\/\/uranus\.sharedaka\.com\/api\/v3\/user\/info\/get url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/xiaodaka.js
 
 [mitm]
 hostname=uranus.sharedaka.com
@@ -18,4 +18,4 @@ hostname=uranus.sharedaka.com
 let obj = JSON.parse($response.body);
 obj.data.endTime = 1867996357000;
 obj.data.hasOpenedMember = true;
-$done({body: JSON.stringify(obj)});
+$done({ body: JSON.stringify(obj) });

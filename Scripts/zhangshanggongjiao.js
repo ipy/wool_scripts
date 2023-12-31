@@ -7,12 +7,14 @@
 
  [rewrite_local]
  # 掌上公交微信小程序去除广告（2022-03-01）
- https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js
+ https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/zhangshanggongjiao.js
 
  [mitm]
  hostname=wx.mygolbs.com
 
  ***********************************/
 
-var body = $response.body.replace(/Ad":1/g, 'Ad":0').replace(/Ad_ab":1/g, 'Ad_ab":0')
-$done({body});
+var body = $response.body
+  .replace(/Ad":1/g, 'Ad":0')
+  .replace(/Ad_ab":1/g, 'Ad_ab":0');
+$done({ body });

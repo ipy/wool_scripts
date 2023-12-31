@@ -6,7 +6,7 @@
 #!icon= https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/TikTok.png
 #!select = 需要解锁的地区, 日本-JP, 韩国-KR, 台湾-TW, 英国-UK, 美国-US, 越南-VN, 新加坡-SG
 #!input = 手动输入地区代码, 例如：JP
-#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/TikTok-Unlock.plugin
+#!raw-url=https://github.com/ipy/wool_scripts/raw/main/Loon/plugin/TikTok-Unlock.plugin
 #!tg-group：https://t.me/lanjieguanggao
 #!update：2023.06.22 22：45
 

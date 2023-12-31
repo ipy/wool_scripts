@@ -1,9 +1,9 @@
 #!name=获取应用cookie或token合集
 #!desc=顺序尽量放到上面，获取到以后取消勾选避免重复大量的MITM
 #!author=fmz200
-#!homepage=https://github.com/fmz200/wool_scripts
-#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
-#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/cookies.snippet
+#!homepage=https://github.com/ipy/wool_scripts
+#!icon=https://raw.githubusercontent.com/ipy/wool_scripts/main/icons/gif/naisi-01.gif
+#!raw-url=https://github.com/ipy/wool_scripts/raw/main/QuantumultX/rewrite/cookies.snippet
 #!tg-group=https://t.me/lanjieguanggao
 #!date=2023-12-29 06:03:00
 #############################################
@@ -34,31 +34,31 @@ https?:\/\/game\.xiaojukeji\.com\/api\/game\/plant\/enter url script-request-bod
 https?:\/\/game\.xiaojukeji\.com\/api\/game\/plant\/enter url script-request-header https://raw.githubusercontent.com/leafTheFish/DeathNote/main/ddgy.js
 
 # 美团获取token
-https://open.meituan.com/user/v1/info/audit url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js
-https://gaea.meituan.com/mapi/usercenter url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js
+https://open.meituan.com/user/v1/info/audit url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/cookie/get_cookie.js
+https://gaea.meituan.com/mapi/usercenter url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/cookie/get_cookie.js
 
 # 京东ck，浏览器登录京东，点击右下角我的页面获取
-^https:\/\/home\.m\.jd\.com\/myJd\/(newhome|home)\.action url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jd_cookie.js
-;^https:\/\/api\.m\.jd\.com\/client\.action url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jd_cookie.js
+^https:\/\/home\.m\.jd\.com\/myJd\/(newhome|home)\.action url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jd_cookie.js
+;^https:\/\/api\.m\.jd\.com\/client\.action url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/jingdong/jd_cookie.js
 
 # 微博ck
-^https:\/\/m?api\.weibo\.c(n|om)\/\d\/users\/show url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js
+^https:\/\/m?api\.weibo\.c(n|om)\/\d\/users\/show url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/cookie/get_cookie.js
 ;^https:\/\/m?api\.weibo\.c(n|om)\/\d\/users\/show url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js
 
 # 抖音 抖抖果园
 ^https://minigame.zijieapi.com/ttgame/game_orchard_ecom/polling_info url script-request-header https://raw.githubusercontent.com/LinYuanovo/scripts/main/dygy.js
 
 # 快手果园获取cookie
-^https://ug-fission.kuaishou.com/rest/n/darwin/orchard/water/watering url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuaishou/ks_getCookie.js
+^https://ug-fission.kuaishou.com/rest/n/darwin/orchard/water/watering url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/kuaishou/ks_getCookie.js
 
 # 拼多多果园token
-https://m.pinduoduo.net/proxy/api/api/server/_stm url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/pinduoduo/pdd_getToken.js
+https://m.pinduoduo.net/proxy/api/api/server/_stm url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/pinduoduo/pdd_getToken.js
 
 # 小米运动
-;^https:\/\/account\.huami\.com\/v2\/client\/login url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/xiaomiSports/xmSports.js
+;^https:\/\/account\.huami\.com\/v2\/client\/login url script-response-body https://raw.githubusercontent.com/ipy/wool_scripts/main/xiaomiSports/xmSports.js
 
 # 什么值得买 (APP点击个人头像/个人资料获取)
-^https:\/\/user-api\.smzdm\.com\/users\/info url script-request-header https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js
+^https:\/\/user-api\.smzdm\.com\/users\/info url script-request-header https://raw.githubusercontent.com/ipy/wool_scripts/main/Scripts/cookie/get_cookie.js
 
 # TestFlight账号cookie
 ^https:\/\/testflight\.apple\.com\/v3\/accounts/.*\/apps$ url script-request-header https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/testflight/TF_keys.js
